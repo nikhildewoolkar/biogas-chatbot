@@ -1,0 +1,10 @@
+Django
+django-environ
+numpy
+Pillow
+psycopg2
+pyint
+pylint
+python-decouple
+sqlparse
+openai
