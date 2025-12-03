@@ -11,4 +11,8 @@ urlpatterns=[
     path("addquery/",views.addquery,name="addquery"),
     path("myqueries/",views.myqueries,name="myqueries"),
     path("changepassword/",views.changepassword,name="changepassword"),
+    path("chat/", views_api.chat),
+    path("query/", views_api.query),
+    path("schema/", views_api.schema),
+    path("healthz/", views_api.health),
 ]
