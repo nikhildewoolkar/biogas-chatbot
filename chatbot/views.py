@@ -178,13 +178,13 @@ def addquery(request):
     if request.method=="POST":
         sentence=request.POST.get("query")
         sql_query = generate_sql(sentence)
+        print(sentence,sql_query)
         data = execute_sql(sql_query)
         if "error" in data:
             result = data["error"]
         else:
             result = data["rows"]
         log=ChatbotLogs(user=p1,sentence=sentence,query=sql_query,ans=result,timestamp=datetime.now())
-        print(log,result,sql_query,sentence)
         log.save()
     return render(request, "addquery.html", {
         "query": sentence,
